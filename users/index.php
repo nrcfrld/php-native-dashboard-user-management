@@ -2,12 +2,12 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM dosen");
+$result = mysqli_query($connection, "SELECT * FROM user_levels");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>Dosen</h1>
+    <h1>Users</h1>
     <?php if(checkRole() == 'admin') : ?>
     <a href="./create.php" class="btn btn-primary">Tambah Data</a>
     <?php endif; ?>
@@ -24,18 +24,8 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
                   <th style="width: 150">Aksi</th>
                   <?php endif; ?>
                   <th>No</th>
-                  <th>NIK</th>
-                  <th>Inisial</th>
-                  <th>Nama dosen</th>
-                  <th>Status</th>
-                  <th>Gender</th>
-                  <th>Agama</th>
-                  <th>Login</th>
-                  <th>Email</th>
-                  <th>Kota</th>
-                  <th>No. Hp</th>
-                  <th>Gaji</th>
-                  <th>Alamat</th>
+                  <th>Username</th>
+                  <th>Level</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,33 +33,21 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
                 $no = 1;
                 while ($data = mysqli_fetch_array($result)) :
                 ?>
-
                   <tr>
                   <?php if(checkRole() == 'admin') : ?>
                     <td>
-                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?nik=<?= $data['nik'] ?>">
+                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id=<?= $data['id'] ?>">
                         <i class="fas fa-trash fa-fw"></i>
                       </a>
-                      <a class="btn btn-sm btn-info" href="edit.php?nik=<?= $data['nik'] ?>">
+                      <a class="btn btn-sm btn-info" href="edit.php?id=<?= $data['id'] ?>">
                         <i class="fas fa-edit fa-fw"></i>
                       </a>
                     </td>
                     <?php endif; ?>
                     <td><?= $no ?></td>
-                    <td><?= $data['nik'] ?></td>
-                    <td><?= $data['inisial'] ?></td>
-                    <td><?= $data['nama_dosen'] ?></td>
-                    <td><?= $data['status'] ?></td>
-                    <td><?= $data['sex'] ?></td>
-                    <td><?= $data['agama'] ?></td>
-                    <td><?= $data['login'] ?></td>
-                    <td><?= $data['email'] ?></td>
-                    <td><?= $data['kota'] ?></td>
-                    <td><?= $data['nohp'] ?></td>
-                    <td><?= $data['salary'] ?></td>
-                    <td><?= $data['alamat'] ?></td>
+                    <td><?= $data['username'] ?></td>
+                    <td><?= $data['userlevel'] ?></td>
                   </tr>
-
                 <?php
                   $no++;
                 endwhile;

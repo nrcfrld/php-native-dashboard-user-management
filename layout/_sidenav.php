@@ -11,10 +11,21 @@
       <li><a class="nav-link" href="../"><i class="fas fa-fire"></i> <span>Home</span></a></li>
       <li class="menu-header">Main</li>
       <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i> <span>Users</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="../users/index.php">List</a></li>
+          <?php if(checkRole() == 'admin') : ?>
+          <li><a class="nav-link" href="../users/create.php">Tambah Data</a></li>
+          <?php endif; ?>
+        </ul>
+      </li>
+      <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Dosen</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="../dosen/index.php">List</a></li>
+          <?php if(checkRole() == 'admin') : ?>
           <li><a class="nav-link" href="../dosen/create.php">Tambah Data</a></li>
+          <?php endif; ?>
         </ul>
       </li>
     </ul>
