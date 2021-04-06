@@ -15,7 +15,8 @@ $kota = $_POST['kota'];
 $email = $_POST['email'];
 $no_hp = $_POST['no_hp'];
 $salary = $_POST['salary'];
-$query = mysqli_query($connection, "insert into dosen(NIK, Inisial, nama_dosen, status, sex, agama, login, password, alamat, kota, email, nohp, salary) value('$nik', '$inisial', '$nama_dosen', '$status', '$sex', '$agama', '$login', '$password', '$alamat', '$kota', '$email', '$no_hp', '$salary')");
+$birth_date = $_POST['birth_date'];
+$query = mysqli_query($connection, "insert into dosen(NIK, Inisial, nama_dosen, status, sex, agama, login, password, alamat, kota, email, nohp, salary, birth_date) value('$nik', '$inisial', '$nama_dosen', '$status', '$sex', '$agama', '$login', '$password', '$alamat', '$kota', '$email', '$no_hp', '$salary', '$birth_date')");
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',
@@ -29,4 +30,3 @@ if ($query) {
                                               ];
                                               header('Location: ./index.php');
                                             }
-                                              ?>

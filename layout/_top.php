@@ -25,10 +25,12 @@ isLogin();
   <link rel="stylesheet" href="../assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
   <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
+  <link rel="stylesheet" href="../assets/modules/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="../assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/components.min.css">
 </head>
 
 <body>

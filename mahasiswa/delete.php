@@ -2,9 +2,9 @@
 session_start();
 require_once '../helper/connection.php';
 
-$nik = $_GET['nik'];
+$nim = $_GET['nim'];
 
-$result = mysqli_query($connection, "DELETE FROM dosen WHERE nik='$nik'");
+$result = mysqli_query($connection, "DELETE FROM mahasiswa WHERE nim='$nim'");
 
 if (mysqli_affected_rows($connection) > 0) {
   $_SESSION['info'] = [

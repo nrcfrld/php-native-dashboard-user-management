@@ -8,8 +8,8 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
 <section class="section">
   <div class="section-header d-flex justify-content-between">
     <h1>Dosen</h1>
-    <?php if(checkRole() == 'admin') : ?>
-    <a href="./create.php" class="btn btn-primary">Tambah Data</a>
+    <?php if (checkRole() == 'admin') : ?>
+      <a href="./create.php" class="btn btn-primary">Tambah Data</a>
     <?php endif; ?>
   </div>
   <div class="row">
@@ -20,8 +20,8 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
             <table class="table table-hover table-striped w-100" id="table-1">
               <thead>
                 <tr>
-                <?php if(checkRole() == 'admin') : ?>
-                  <th style="width: 150">Aksi</th>
+                  <?php if (checkRole() == 'admin') : ?>
+                    <th style="width: 150">Aksi</th>
                   <?php endif; ?>
                   <th>No</th>
                   <th>NIK</th>
@@ -30,6 +30,7 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
                   <th>Status</th>
                   <th>Gender</th>
                   <th>Agama</th>
+                  <th>Tgl Lahir</th>
                   <th>Login</th>
                   <th>Email</th>
                   <th>Kota</th>
@@ -45,15 +46,15 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
                 ?>
 
                   <tr>
-                  <?php if(checkRole() == 'admin') : ?>
-                    <td>
-                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?nik=<?= $data['nik'] ?>">
-                        <i class="fas fa-trash fa-fw"></i>
-                      </a>
-                      <a class="btn btn-sm btn-info" href="edit.php?nik=<?= $data['nik'] ?>">
-                        <i class="fas fa-edit fa-fw"></i>
-                      </a>
-                    </td>
+                    <?php if (checkRole() == 'admin') : ?>
+                      <td>
+                        <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?nik=<?= $data['nik'] ?>" onclick="return confirm('Are you sure you want to delete ?')">
+                          <i class="fas fa-trash fa-fw"></i>
+                        </a>
+                        <a class="btn btn-sm btn-info" href="edit.php?nik=<?= $data['nik'] ?>">
+                          <i class="fas fa-edit fa-fw"></i>
+                        </a>
+                      </td>
                     <?php endif; ?>
                     <td><?= $no ?></td>
                     <td><?= $data['nik'] ?></td>
@@ -62,6 +63,7 @@ $result = mysqli_query($connection, "SELECT * FROM dosen");
                     <td><?= $data['status'] ?></td>
                     <td><?= $data['sex'] ?></td>
                     <td><?= $data['agama'] ?></td>
+                    <td><?= $data['birth_date'] ?></td>
                     <td><?= $data['login'] ?></td>
                     <td><?= $data['email'] ?></td>
                     <td><?= $data['kota'] ?></td>

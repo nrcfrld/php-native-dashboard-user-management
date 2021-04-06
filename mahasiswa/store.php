@@ -13,17 +13,20 @@ $no_hp = $_POST['no_hp'];
 $login = $_POST['login'];
 $password = $_POST['password'];
 $kode_prodi = $_POST['kode_prodi'];
-$query = mysqli_query($connection, "insert into mahasiswa(nim, nama_mhs, agama, sex, alamat, kota, asal_sma, nohp, Login, Pass, Kode_prodi) value('$nim', '$nama_mhs', '$agama', '$sex', '$alamat', '$kota', '$asal_sekolah', '$no_hp', '$login', '$password', '$kode_prodi')");
+$birth_date = $_POST['birth_date'];
+
+$query = mysqli_query($connection, "insert into mahasiswa(nim, nama_mhs, agama, sex, alamat, kota, asal_sekolah, no_hp, login, password, kode_prodi, birth_date) value('$nim', '$nama_mhs', '$agama', '$sex', '$alamat', '$kota', '$asal_sekolah', '$no_hp', '$login', '$password', '$kode_prodi', '$birth_date')");
+
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',
     'message' => 'Berhasil menambah data'
   ];
   header('Location: ./index.php');
-                                            } else {
-                                              $_SESSION['info'] = [
-                                                'status' => 'failed',
-                                                'message' => mysqli_error($connection)
-                                              ];
-                                              header('Location: ./index.php');
-                                            }
+} else {
+  $_SESSION['info'] = [
+    'status' => 'failed',
+    'message' => mysqli_error($connection)
+  ];
+  header('Location: ./index.php');
+}

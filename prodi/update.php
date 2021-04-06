@@ -4,7 +4,7 @@ require_once '../helper/connection.php';
 
 $kode_prodi = $_POST['kode_prodi'];
 $nama_prodi = $_POST['nama_prodi'];
-$query = mysqli_query($connection, "UPDATE prodi SET nama_prodi='$nama_prodi' WHERE kode_prodi='$kode_prodi'");
+$query = mysqli_query($connection, "UPDATE prodi SET nama_prodi='$nama_prodi', kode_prodi='$kode_prodi' WHERE kode_prodi='$kode_prodi'");
 
 if ($query) {
   $_SESSION['info'] = [

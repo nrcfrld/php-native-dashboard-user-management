@@ -14,19 +14,19 @@ $kota = $_POST['kota'];
 $email = $_POST['email'];
 $nohp = $_POST['no_hp'];
 $salary = $_POST['salary'];
+$birth_date = $_POST['birth_date'];
 
-$query = mysqli_query($connection, "UPDATE dosen SET nama_dosen = '$nama_dosen', status = '$status', sex = '$sex', agama = '$agama', login = '$login', password = '$password', alamat = '$alamat', kota = '$kota', email = '$email', nohp = '$nohp', salary = '$salary' WHERE nik = '$nik'");
+$query = mysqli_query($connection, "UPDATE dosen SET nama_dosen = '$nama_dosen', status = '$status', sex = '$sex', agama = '$agama', login = '$login', password = '$password', alamat = '$alamat', kota = '$kota', email = '$email', nohp = '$nohp', salary = '$salary', birth_date = '$birth_date' WHERE nik = '$nik'");
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',
     'message' => 'Berhasil mengubah data'
   ];
   header('Location: ./index.php');
-                                            } else {
-                                              $_SESSION['info'] = [
-                                                'status' => 'failed',
-                                                'message' => mysqli_error($connection)
-                                              ];
-                                              header('Location: ./index.php');
-                                            }
-                                              ?>
+} else {
+  $_SESSION['info'] = [
+    'status' => 'failed',
+    'message' => mysqli_error($connection)
+  ];
+  header('Location: ./index.php');
+}

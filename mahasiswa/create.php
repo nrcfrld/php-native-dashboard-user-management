@@ -26,6 +26,19 @@ $prodi = mysqli_query($connection, "SELECT * FROM prodi");
                 <td><input class="form-control" type="text" name="nama_mhs" size="20"></td>
               </tr>
               <tr>
+                <td>Tanggal Lahir</td>
+                <td>
+                  <div class="input-group">
+                    <input type="text" class="form-control datepicker" name="birth_date" value="" id="date" required>
+                    <div class="input-group-append">
+                      <label class="input-group-text" for="date">
+                        <i class="fas fa-calendar-day"></i>
+                      </label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
                 <td>agama</td>
                 <td>
                   <select class="form-control" name="agama" id="agama" required>

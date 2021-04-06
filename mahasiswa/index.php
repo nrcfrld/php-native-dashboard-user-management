@@ -46,10 +46,10 @@ $result = mysqli_query($connection, "SELECT * FROM mahasiswa");
                   <tr>
                     <?php if (checkRole() == 'admin') : ?>
                       <td>
-                        <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?nik=<?= $data['nik'] ?>">
+                        <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?nim=<?= $data['nim'] ?>" onclick="return confirm('Are you sure you want to delete ?')">
                           <i class="fas fa-trash fa-fw"></i>
                         </a>
-                        <a class="btn btn-sm btn-info" href="edit.php?nik=<?= $data['nik'] ?>">
+                        <a class="btn btn-sm btn-info" href="edit.php?nim=<?= $data['nim'] ?>">
                           <i class="fas fa-edit fa-fw"></i>
                         </a>
                       </td>
@@ -61,11 +61,11 @@ $result = mysqli_query($connection, "SELECT * FROM mahasiswa");
                     <td><?= $data['sex'] ?></td>
                     <td><?= $data['alamat'] ?></td>
                     <td><?= $data['kota'] ?></td>
-                    <td><?= $data['asal_sma'] ?></td>
-                    <td><?= $data['nohp'] ?></td>
-                    <td><?= $data['Login'] ?></td>
-                    <td><?= $data['Pass'] ?></td>
-                    <td><?= $data['Kode_prodi'] ?></td>
+                    <td><?= $data['asal_sekolah'] ?></td>
+                    <td><?= $data['no_hp'] ?></td>
+                    <td><?= $data['login'] ?></td>
+                    <td><?= $data['password'] ?></td>
+                    <td><?= $data['kode_prodi'] ?></td>
                   </tr>
 
                 <?php

@@ -1,17 +1,17 @@
-<?php 
+<?php
 require_once 'helper/connection.php';
 session_start();
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  
+
   $sql = "SELECT * FROM user_levels WHERE username='$username' and password='$password' LIMIT 1";
   echo $sql;
   $result = mysqli_query($connection, $sql);
 
   $row = mysqli_fetch_assoc($result);
 
-  if($row){
+  if ($row) {
     $_SESSION['login'] = $row;
     header('Location: index.php');
   }
@@ -20,6 +20,7 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -47,8 +48,16 @@ if(isset($_POST['submit'])){
               <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
 
-            <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
+            <div class="card card-fadein" style="display:none">
+              <div class="card-body">
+                <div id="currentTime" class="text-center text-primary" style="letter-spacing: 1.5px"></div>
+              </div>
+            </div>
+
+            <div class="card card-primary card-fadein" style="display: none">
+              <div class="card-header">
+                <h4>Login</h4>
+              </div>
 
               <div class="card-body">
                 <form method="POST" action="" class="needs-validation" novalidate="">
@@ -62,7 +71,7 @@ if(isset($_POST['submit'])){
 
                   <div class="form-group">
                     <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
+                      <label for="password" class="control-label">Password</label>
                     </div>
                     <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                     <div class="invalid-feedback">
@@ -85,7 +94,7 @@ if(isset($_POST['submit'])){
                 </form>
 
               </div>
-            </div>  
+            </div>
             <div class="simple-footer">
               Copyright &copy; Enrico 2020
             </div>
@@ -108,7 +117,13 @@ if(isset($_POST['submit'])){
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".card-fadein").fadeIn(1000)
+    })
+  </script>
 
   <!-- Page Specific JS File -->
 </body>
+
 </html>

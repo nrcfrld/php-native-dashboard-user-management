@@ -30,6 +30,8 @@
 <script src="../assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
 <script src="../assets/modules/jquery-ui/jquery-ui.min.js"></script>
 <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
+<script src="../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 
 <!-- Template JS File -->
 <script src="../assets/js/scripts.js"></script>
