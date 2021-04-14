@@ -1,5 +1,6 @@
 <?php
 require_once '../helper/auth.php';
+$scripts = [];
 
 isLogin();
 ?>
@@ -27,10 +28,12 @@ isLogin();
   <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
   <link rel="stylesheet" href="../assets/modules/bootstrap-daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="../assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="../assets/modules/password-strength-meter/password.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 <body>

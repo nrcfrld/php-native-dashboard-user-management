@@ -1,7 +1,7 @@
 </div>
 <footer class="main-footer">
   <div class="footer-left">
-    Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+    <!-- Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
   </div>
   <div class="footer-right">
 
@@ -32,6 +32,8 @@
 <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
 <script src="../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="../assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../assets/modules/password-strength-meter/password.min.js"></script>
 
 <!-- Template JS File -->
 <script src="../assets/js/scripts.js"></script>
@@ -39,6 +41,11 @@
 
 <!-- Page Specific JS File -->
 <script src="../assets/js/page/index.js"></script>
+
+<?php foreach ($scripts as $script) {
+  echo $script;
+}
+?>
 </body>
 
 </html>

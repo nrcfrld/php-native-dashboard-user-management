@@ -6,3 +6,15 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
+
+.display-none {
+  display: none;
+}
+
+section.section {
+  display: none;
+}
+
+.error {
+  color: red;
+}

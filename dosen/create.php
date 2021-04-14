@@ -13,11 +13,13 @@ require_once '../helper/connection.php';
       <div class="card">
         <div class="card-body">
           <!-- // Form -->
-          <form action="./store.php" method="POST">
+          <form action="./store.php" method="POST" id="form-dosen">
             <table cellpadding="8" class="w-100">
               <tr>
                 <td>NIK</td>
-                <td><input class="form-control" type="number" name="nik" size="20" required></td>
+                <td><input class="form-control" type="number" name="nik" size="20" required>
+
+                </td>
                 <td>Inisial</td>
                 <td><input class="form-control" type="text" name="inisial" size="20" maxlength="3" required></td>
               </tr>
@@ -56,12 +58,6 @@ require_once '../helper/connection.php';
                 </td>
               </tr>
               <tr>
-                <td>Login</td>
-                <td><input class="form-control" type="text" name="login" size="20" required></td>
-                <td>Password</td>
-                <td><input class="form-control" type="password" name="password" size="20" required></td>
-              </tr>
-              <tr>
                 <td>Email</td>
                 <td><input class="form-control" type="text" name="email" size="20" required></td>
 
@@ -92,6 +88,29 @@ require_once '../helper/connection.php';
                 <td colspan="3"><textarea class="form-control" name="alamat" id="alamat" required></textarea></td>
               </tr>
               <tr>
+                <td>Login</td>
+                <td><input class="form-control" type="text" name="login" size="20" required></td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>
+                  <div class="form-group mb-0">
+                    <input id="password" class="form-control" type="password" name="password" size="20" required>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="show-password">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Tampilkan
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
                 <td>
                   <input class="btn btn-primary" type="submit" name="proses" value="Simpan">
                   <input class="btn btn-danger" type="reset" name="batal" value="Batalkan">
@@ -105,5 +124,28 @@ require_once '../helper/connection.php';
 </section>
 
 <?php
+$scripts = [
+  <<< EOD
+  <script>
+    $(document).ready(function(){
+      $("#form-dosen").validate({
+        errorClass: "is-invalid",
+      })
+
+      $("#show-password").click(function(){
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      });
+
+      $("#password").password({});
+    })
+  </script>
+  EOD
+];
+
 require_once '../layout/_bottom.php';
 ?>

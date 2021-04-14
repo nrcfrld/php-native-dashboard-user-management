@@ -18,4 +18,6 @@ $(document).ready(function () {
     let currentTime = `${hours}:${minutes}:${seconds} WIB`;
     $("#currentTime").html(currentTime);
   }, 1000);
+
+  $(".section").fadeIn(800);
 });
